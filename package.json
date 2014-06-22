@@ -1,0 +1,45 @@
+{
+  "name": "grunt-npmcopy",
+  "version": "0.1.0",
+  "description": "NPM on the front-end without the cruft.",
+  "homepage": "https://github.com/timmywil/grunt-npmcopy",
+  "license": "MIT",
+  "repository": "timmywil/grunt-npmcopy",
+  "bugs": "https://github.com/timmywil/grunt-npmcopy/issues",
+  "author": {
+    "name": "Timmy Willison",
+    "email": "timmywillisn@gmail.com",
+    "url": "http://timmywillison.com"
+  },
+  "keywords": [
+    "gruntplugin",
+    "npmcopy",
+    "npm",
+    "copy",
+    "package",
+    "package manager"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "glob": "^4.0.2",
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jscs-checker": "^0.5.1",
+    "grunt-jsonlint": "^1.0.4",
+    "jquery": "2.1.1",
+    "jquery-ui": "1.10.5",
+    "jquery.panzoom": "2.0.5",
+    "load-grunt-tasks": "^0.5.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
