@@ -181,7 +181,7 @@ See the [CONTRIBUTING.md](https://github.com/timmywil/grunt-npmcopy/blob/master/
 
 ## Release History
 
-- **0.1.0** (*6-22-2014*) First Release
+*Not yet released*
 
 ## License
 Copyright (c) 2014 Timmy Willison. Licensed under the MIT license.
