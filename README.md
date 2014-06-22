@@ -5,7 +5,7 @@
 
 - Use NPM as your front-end package manager without making `node_modules` public.
 - Position your front-end dependencies where you want them in your repository.
-- Conveniently facilitates [tracking your front-end dependencies](http://addyosmani.com/blog/checking-in-front-end-dependencies/) without committing the entire `node_modules` folder.
+- Conveniently facilitates [tracking your front-end dependencies](http://addyosmani.com/blog/checking-in-front-end-dependencies/).
 
 ## Workflow
 
