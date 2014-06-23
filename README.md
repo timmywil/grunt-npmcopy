@@ -64,7 +64,7 @@ Default value: `''`
 Type: `Boolean`  
 Default value: `false`
 
-Report any modules in your package.json that have not been configured to copy at least one file with `npmcopy`.
+To help ensure you didn't miss any, report any modules in your package.json that have not been configured to copy at least one file with `npmcopy`.
 
 #### options.copyOptions
 Type: `Object`  

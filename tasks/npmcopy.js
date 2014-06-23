@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 
 	// Logging
 	var log = grunt.log,
+		fail = grunt.fail,
 		verbose = grunt.verbose;
 
 	// Utilities
@@ -113,10 +114,11 @@ module.exports = function(grunt) {
 		if (++numRuns === getNumTargets()) {
 			if (unused.length) {
 				if (options.report) {
-					log.writeln('Some npm packages are not configured: ', unused);
+					log.writeln('\nPackages left out:');
+					log.writeln(unused.join('\n'));
 				}
 			} else if (options.report) {
-				log.ok('All modules accounted for');
+				log.ok('All modules have something copied.');
 			}
 		}
 	}
@@ -148,8 +150,10 @@ module.exports = function(grunt) {
 	 *  files format: [{ src: '', dest: '' }, ...]
 	 * @param {Array} files
 	 * @param {Object} options
+	 * @returns {boolean} Returns whether anything was copied
 	 */
 	function copy(files, options) {
+		var copied = false;
 		files.forEach(function(file) {
 			var src = file.src;
 			// Use source for destination if no destionation is available
@@ -169,6 +173,7 @@ module.exports = function(grunt) {
 			// Copy folders
 			if (grunt.file.isDir(src)) {
 				grunt.file.recurse(src, function(abspath, rootdir, subdir, filename) {
+					copied = true;
 					grunt.file.copy(
 						abspath,
 						path.join(dest, subdir || '', filename),
@@ -181,6 +186,7 @@ module.exports = function(grunt) {
 				if (!rperiod.test(path.basename(dest))) {
 					dest = path.join(dest, path.basename(src));
 				}
+				copied = true;
 				grunt.file.copy(src, dest, options.copyOptions);
 				log.writeln(src + ' -> ' + dest);
 			// Glob
@@ -188,12 +194,13 @@ module.exports = function(grunt) {
 				var matches = glob.sync(src);
 				if (matches.length) {
 					matches = convertMatches(matches, options, file.dest);
-					copy(matches, options);
+					copied = copied || copy(matches, options);
 				} else {
 					log.warn(src + ' was not found');
 				}
 			}
 		});
+		return copied;
 	}
 
 	/**
@@ -204,7 +211,7 @@ module.exports = function(grunt) {
 	 * @param {Array} files
 	 * @param {Object} options
 	 */
-	function run(files, options) {
+	var run = function(files, options) {
 		verbose.writeln('Using srcPrefix: ' + options.srcPrefix);
 		verbose.writeln('Using destPrefix: ' + options.destPrefix);
 
@@ -212,11 +219,13 @@ module.exports = function(grunt) {
 		files = convert(files);
 
 		// Copy files
-		copy(files, options);
+		if (!copy(files, options)) {
+			fail.warn('Nothing was copied for the "' + this.target + '" target');
+		}
 
 		// Report if any dependencies have not been copied
 		ensure(files, options);
-	}
+	};
 
 	grunt.registerMultiTask(
 		'npmcopy',
@@ -235,7 +244,7 @@ module.exports = function(grunt) {
 				copyOptions: {}
 			});
 
-			run(files, options);
+			run.call(this, files, options);
 		}
 	);
 };

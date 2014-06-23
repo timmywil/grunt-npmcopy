@@ -40,6 +40,9 @@ module.exports = function(grunt) {
 
 		// Configuration to be run (and then tested)
 		npmcopy: {
+			options: {
+				report: true
+			},
 			default_options: {
 				files: {
 					'tmp/js/libs/lodash.js': 'lodash/dist/lodash.js',
