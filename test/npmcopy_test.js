@@ -62,5 +62,13 @@ exports.npmcopy = {
 		test.ok(grunt.file.exists('tmp/js/libs/lodash_folder/lodash.js'));
 
 		test.done();
+	},
+	main: function(test) {
+		test.expect(2);
+
+		test.ok(grunt.file.exists('tmp/js/plugins/jquery.onoff.js'), 'Onoff copied to plugins directory');
+		test.ok(grunt.file.exists('tmp/js/plugins/jquery.onoff.css'), 'Onoff css copied to plugins directory');
+
+		test.done();
 	}
 };

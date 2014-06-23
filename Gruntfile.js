@@ -81,6 +81,11 @@ module.exports = function(grunt) {
 			dest_folder: {
 				src: 'lodash/dist/lodash.js',
 				dest: 'tmp/js/libs/lodash_folder'
+			},
+			// Main pragma
+			main: {
+				src: 'jquery.onoff:main',
+				dest: 'tmp/js/plugins/'
 			}
 		},
 
