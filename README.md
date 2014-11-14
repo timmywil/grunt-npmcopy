@@ -1,15 +1,15 @@
 # grunt-npmcopy
 [![Build Status](https://travis-ci.org/timmywil/grunt-npmcopy.png?branch=master)](https://travis-ci.org/timmywil/grunt-npmcopy)
 
-> NPM for the front-end without the cruft.
+> npm for the front-end without the cruft.
 
-- Use NPM as your front-end package manager without making `node_modules` public.
+- Use npm as your front-end package manager without making `node_modules` public.
 - Position your front-end dependencies where you want them in your repository.
 - Conveniently facilitates [tracking your front-end dependencies](http://addyosmani.com/blog/checking-in-front-end-dependencies/).
 
 ## Workflow
 
-Whenever you add a new front-end dependency with NPM, add which file should be copied and where to your Gruntfile `"npmcopy"` config. Then, run `grunt npmcopy`.
+Whenever you add a new front-end dependency with npm, add which file should be copied and where to your Gruntfile `"npmcopy"` config. Then, run `grunt npmcopy`.
 
 ## Getting Started
 This plugin requires Grunt.
