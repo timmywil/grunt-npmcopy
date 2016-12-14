@@ -1,6 +1,6 @@
 {
   "name": "grunt-npmcopy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "NPM on the front-end without the cruft.",
   "homepage": "https://github.com/timmywil/grunt-npmcopy",
   "license": "MIT",
