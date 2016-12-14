@@ -21,13 +21,6 @@ module.exports = function(grunt) {
 		glob = require('glob'),
 		sep = path.sep;
 
-	// Get all modules
-	var npmConfig = grunt.file.readJSON('package.json');
-	var allModules = Object.keys(
-		_.extend({}, npmConfig.dependencies, npmConfig.devDependencies)
-	);
-	var unused = allModules.slice(0);
-
 	// Track number of runs
 	var numTargets;
 	var numRuns = 0;
@@ -97,31 +90,6 @@ module.exports = function(grunt) {
 					.indexOf(sep + module + sep) > -1;
 			});
 		});
-	}
-
-	/**
-	 * Ensure all npm dependencies are accounted for
-	 * @param {Array} files Files property from the task
-	 * @param {Object} options
-	 * @returns {boolean} Returns whether all dependencies are accounted for
-	 */
-	function ensure(files, options) {
-		// Update the global array of represented modules
-		unused = filterRepresented(unused, files, options);
-
-		verbose.writeln('Unrepresented modules list currently at ', unused);
-
-		// Only print message when all targets have been run
-		if (++numRuns === getNumTargets()) {
-			if (unused.length) {
-				if (options.report) {
-					log.writeln('\nPackages left out:');
-					log.writeln(unused.join('\n'));
-				}
-			} else if (options.report) {
-				log.ok('All modules have something copied.');
-			}
-		}
 	}
 
 	/**
@@ -251,9 +219,6 @@ module.exports = function(grunt) {
 		if (!copy(files, options)) {
 			fail.warn('Nothing was copied for the "' + this.target + '" target');
 		}
-
-		// Report if any dependencies have not been copied
-		ensure(files, options);
 	};
 
 	grunt.registerMultiTask(
