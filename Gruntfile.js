@@ -40,6 +40,14 @@ module.exports = function(grunt) {
         },
         src: 'dist'
       },
+      prefix_matches_file: {
+        options: {
+          destPrefix: 'tmp'
+        },
+        files: {
+          'tmp.js': 'jquery/dist/jquery.js'
+        }
+      },
       process: {
         options: {
           destPrefix: 'tmp/js/libs',

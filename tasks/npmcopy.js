@@ -184,12 +184,12 @@ module.exports = function(grunt) {
       var dest = file.dest || src
 
       // Add source prefix if not already added
-      if (src.indexOf(options.srcPrefix) !== 0) {
+      if (src.indexOf(options.srcPrefix + path.sep) !== 0) {
         src = path.join(options.srcPrefix, src)
       }
 
       // Add dest prefix if not already added
-      if (dest.indexOf(options.destPrefix) !== 0) {
+      if (dest.indexOf(options.destPrefix + path.sep) !== 0) {
         dest = path.join(options.destPrefix, dest)
       }
 

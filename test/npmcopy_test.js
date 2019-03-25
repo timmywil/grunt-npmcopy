@@ -49,6 +49,11 @@ exports.npmcopy = {
 
     test.done()
   },
+  prefix_matches_file: function(test) {
+    test.expect(1)
+    test.ok(grunt.file.exists('tmp/tmp.js'), 'File copied when filename has a prefix in the name')
+    test.done()
+  },
   process: function(test) {
     test.expect(2)
 
