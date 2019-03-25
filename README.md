@@ -186,9 +186,5 @@ Follow the same coding style present in the repo and add tests for any bug fix o
 
 See the [CONTRIBUTING.md](https://github.com/timmywil/grunt-npmcopy/blob/master/CONTRIBUTING.md) for more info.
 
-## Release History
-
-- **0.1.0** (*6-23-2014*) First Release
-
 ## License
-Copyright (c) 2014 Timmy Willison. Licensed under the MIT license.
+Copyright (c) Timmy Willison. Licensed under the MIT license.
