@@ -82,6 +82,15 @@ exports.npmcopy = {
 
     test.done()
   },
+  glob_multi_ext: function(test) {
+    test.expect(5)
+    test.ok(grunt.file.exists('tmp/images/fancybox/fancybox_overlay.png'))
+    test.ok(grunt.file.exists('tmp/images/fancybox/fancybox_loading.gif'))
+    test.ok(grunt.file.exists('tmp/images/photoswipe/default-skin.png'))
+    test.ok(grunt.file.exists('tmp/images/photoswipe/default-skin.svg'))
+    test.ok(grunt.file.exists('tmp/images/photoswipe/preloader.gif'))
+    test.done()
+  },
   dest_folder: function(test) {
     test.expect(1)
 

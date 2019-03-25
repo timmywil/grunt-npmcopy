@@ -70,6 +70,15 @@ module.exports = function(grunt) {
         // in which to place the matching files
         src: 'jquery.panzoom/dist/*.js'
       },
+      glob_multi_ext: {
+        options: {
+          destPrefix: 'tmp/images'
+        },
+        files: {
+          fancybox: 'fancybox/dist/img/**/*.{png,svg,gif}',
+          photoswipe: 'photoswipe/dist/default-skin/**/*.{png,svg,gif}'
+        }
+      },
       dest_folder: {
         src: 'lodash/lodash.js',
         dest: 'tmp/js/libs/lodash_folder'

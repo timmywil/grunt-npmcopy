@@ -220,7 +220,7 @@ module.exports = function(grunt) {
         var matches = glob.sync(src)
         if (matches.length) {
           matches = convertMatches(matches, options, file.dest)
-          copied = copied || copy(matches, options)
+          copied = copy(matches, options) || copied
         } else {
           log.warn(src + ' was not found')
         }
