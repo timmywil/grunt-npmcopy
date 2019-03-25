@@ -6,6 +6,8 @@
  */
 
 module.exports = function(grunt) {
+  'use strict'
+
   // Logging
   var log = grunt.log,
     fail = grunt.fail,
