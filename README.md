@@ -1,5 +1,5 @@
 # grunt-npmcopy
-[![Build Status](https://travis-ci.org/timmywil/grunt-npmcopy.png?branch=master)](https://travis-ci.org/timmywil/grunt-npmcopy)
+[![Build Status](https://travis-ci.org/timmywil/grunt-npmcopy.png?branch=master)](https://travis-ci.org/timmywil/grunt-npmcopy) [![Greenkeeper badge](https://badges.greenkeeper.io/timmywil/grunt-npmcopy.svg)](https://greenkeeper.io/)
 
 > npm for the front-end without the cruft.
 
