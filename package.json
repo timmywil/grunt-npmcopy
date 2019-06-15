@@ -32,7 +32,7 @@
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-nodeunit": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-jsonlint": "^1.0.4",
+    "grunt-jsonlint": "^2.0.0",
     "grunt-prettier": "^1.2.0",
     "jquery": "^3.3.1",
     "jquery-ui": "^1.12.1",
