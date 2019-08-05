@@ -34,7 +34,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-jsonlint": "^2.0.0",
     "grunt-prettier": "^1.2.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "jquery.onoff": "^0.3.6",
     "jquery.panzoom": "^3.2.2",
